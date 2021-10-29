@@ -1,0 +1,17 @@
+version: '3.1'
+
+services:
+
+  postgres:
+    image: postgres:alpine3.14
+    container_name: postgres
+    restart: always
+    tty: true
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=jwsystem
+    volumes:
+      - .postgresql/data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432  
